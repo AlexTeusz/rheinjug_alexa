@@ -1,0 +1,133 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "java duesseldorf",
+      "intents": [
+        {
+          "name": "AboutEventIntent",
+          "samples": [
+            "worüber handelt der nächste vortrag",
+            "was ist das thema des nächsten vortrag",
+            "worum handelt der nächste vortrag",
+            "worum handelt das nächste meetup",
+            "worum gehts im nächsten vortrag",
+            "was das thema des nächsten vortrags ist ",
+            "was das thema vom nächsten vortrag ist ",
+            "was ist das nächste thema",
+            "was ist das nächste topic ",
+            "was das nächste thema ist ",
+            "nach dem nächsten thema"
+          ]
+        },
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "JoinEventIntent",
+          "slots": [
+            {
+              "name": "name",
+              "type": "AMAZON.DE_FIRST_NAME",
+              "samples": [
+                "{name}",
+                "schreib {name} drauf",
+                "der name lautet {name}"
+              ]
+            }
+          ],
+          "samples": [
+            "schreib mich auf die teilnehmerliste für das nächste event",
+            "ich beim nächsten vortrag teilnehmen möchte",
+            "ich zum nächsten vortrag komme",
+            "schreib mich auf die teilnehmerliste ",
+            "ob sie mich auf die teilnehmerliste für das event schreiben kann ",
+            "ich möchte am nächsten vortrag teilnehmen",
+            "ich hab vor zum nächten meetup zu gehen ",
+            "dass sie mich auf die teilnehmerliste des nächsten meetups schreiben soll",
+            "dass sie mich auf die teilnehmerliste des nächsten vortrags schreiben soll"
+          ]
+        },
+        {
+          "name": "NextEventsIntent",
+          "samples": [
+            "wann ist das nächste meetup",
+            "wann ist das nächste treffen",
+            "wann findet wieder ein treffen statt",
+            "wann ist der nächste vortrag ",
+            "an welchem tag ist das nächste meetup",
+            "an welchem tag ist das nächste treffen",
+            "an welchem tag das nächste treffen ist",
+            "wann das nächste treffen ist",
+            "wann der nächste vortrag ist "
+          ]
+        },
+        {
+          "name": "ReadEventMembersIntent",
+          "samples": [
+            "wer kommt alles zum nächsten meetup",
+            "wer kommt zum nächsten vortrag",
+            "nach teilnehmern des nächsten vortrags",
+            "nach der teilnehmerliste",
+            "nach der teilnehmerliste vom nächsten meetup",
+            "wer am nächsten vortrag teilnimmt",
+            "wer am nächsten meetup teilnimmt",
+            "wer zum nächsten vortrag kommt",
+            "wer zum nächsten meetup kommt",
+            "wer nimmt am nächsten vortrag teil",
+            "wer nimmt am nächsten meetup teil",
+            "lies die teilnehmerliste vor",
+            "lies die teilnehmer vom nächsten meetup vo",
+            "lies die teilnehmer vom nächsten vortrag vor"
+          ]
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "JoinEventIntent",
+          "confirmationRequired": false,
+          "slots": [
+            {
+              "name": "name",
+              "type": "AMAZON.DE_FIRST_NAME",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Intent-JoinEventIntent.IntentSlot-name"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Intent-JoinEventIntent.IntentSlot-name",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Sagst du mir bitte deinen Namen"
+          },
+          {
+            "type": "PlainText",
+            "value": "Ich bräuchte noch eben deinen Namen"
+          },
+          {
+            "type": "PlainText",
+            "value": "Welchen Namen soll ich auf die Liste schreiben"
+          }
+        ]
+      }
+    ]
+  }
+}
