@@ -10,7 +10,7 @@ const languageStrings = {
     'de-DE': {
         'translation': {
             'WELCOME_LAUNCH':"Willkommen bei der Rhein Java User Group. Wie kann ich dir weiterhelfen?",
-            'HELP_MESSAGE': "Wo liegt das Problem?",
+            'HELP_MESSAGE': "Du kannst nach dem nächsten Treffen fragen, wann dieses ist, oder dich auf die Teilnehmerliste schreiben. Frag nach der Teilnehmerliste, um zu erfahren wer alles kommt.",
             'CANCEL_MESSAGE': "Natürlich. Auf wiedersehen.",
             'DB_FAIL': "Leider konnte ich nicht auf die Datenbank zugreifen.",
             'NextLater': "Das nächste Meetup ist am %DATE% und trägt den Titel %NAME%",
@@ -58,7 +58,7 @@ var handlers = {
     },
     'AMAZON.CancelIntent': function () {
         var speechOutput = this.t('CANCEL_MESSAGE');
-        this.response.speak(speechOutput).listen(speechOutput);
+        this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
     'AMAZON.StopIntent': function () {
